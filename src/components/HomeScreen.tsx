@@ -17,7 +17,7 @@ import { LogBox } from 'react-native';
 
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 
-const FilmHeader = ({ item }) => {
+const FilmHeader = ({ item, navigation }) => {
     console.log('ID: ', item.id);
     return (
       <View
@@ -76,7 +76,7 @@ export default function HomeScreen({navigation}) {
           <AccordionList
             
             data={data.allFilms.films}
-            customTitle={item => <FilmHeader key={item} item={ item}/>}
+            customTitle={item => <FilmHeader key={item} item={item} navigation={ navigation} />}
             customBody={item => <FilmSpeciesDetail key={ item.id} item={ item} />}
             animationDuration={400}
             expandMultiple={true}
