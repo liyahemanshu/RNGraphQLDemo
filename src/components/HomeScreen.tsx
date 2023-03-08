@@ -13,6 +13,9 @@ import {AccordionItem, AccordionList} from 'react-native-accordion-list-view';
 import React, {useEffect} from 'react';
 import Loading from './Loading';
 import {GET_ALL_FILMS} from '../gql/queries';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 
 const FilmHeader = ({ item }) => {
     console.log('ID: ', item.id);
@@ -35,8 +38,8 @@ const FilmSpeciesDetail = ({ item }) => {
     console.log(item.director);
     return (
       
-        item.speciesConnection.species.map(element => (
-          <View key={item.title} style={styles.filmDetailStyle}>
+        item.speciesConnection.species.map((element, idx) => (
+          <View key={idx} style={styles.filmDetailStyle}>
             <Text> -> Name: {element.name}</Text>
             <Text> -> Classification: {element.classification}</Text>
           </View>
