@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, ScrollView} from 'react-native';
 
 import {useQuery} from '@apollo/client';
 import {GET_FILM_DETAILS} from '../gql/queries';
@@ -23,13 +23,15 @@ export default function FilmDetail({route, navigation}) {
     console.log(data);
   }
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Text style={styles.textStyle}>Title: **{data.film.title}**</Text>
       <Text style={styles.textStyle}>Director: **{data.film.director}**</Text>
       <Text style={styles.textStyle}>Producers: **{data.film.producers.join(',')}**</Text>
       <Text style={styles.textStyle}>Description:{'\n'}**{data.film.openingCrawl}**</Text>
       <Text style={styles.textStyle}>Release Date: **{data.film.releaseDate}**</Text>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 

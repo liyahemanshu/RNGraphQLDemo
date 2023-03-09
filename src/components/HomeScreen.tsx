@@ -7,9 +7,8 @@ import {
   Button,
   StyleSheet,
   SafeAreaView,
-  ScrollView,
 } from 'react-native';
-import {AccordionItem, AccordionList} from 'react-native-accordion-list-view';
+import { AccordionList} from 'react-native-accordion-list-view';
 import React, {useEffect} from 'react';
 import Loading from './Loading';
 import {GET_ALL_FILMS} from '../gql/queries';

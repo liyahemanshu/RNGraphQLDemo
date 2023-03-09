@@ -1,14 +1,5 @@
 import {gql} from '@apollo/client';
 
-export const CONTINENT_QUERY = gql`
-  query ContinentQuery {
-    continents {
-      code
-      name
-    }
-  }
-`;
-
 export const GET_ALL_FILMS = gql`
   query AllFilms {
     allFilms {
@@ -38,16 +29,6 @@ export const GET_FILM_DETAILS = gql`
       releaseDate
       title
       openingCrawl
-    }
-  }
-`;
-
-export const COUNTRY_QUERY = gql`
-  query Continent($code: ID!) {
-    continent(code: $code) {
-      countries {
-        name
-      }
     }
   }
 `;
